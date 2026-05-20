@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teduh Jiwa</title>
+    <title>Login Teduh Jiwa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,17 +16,24 @@
                         <path d="M12 14h12v8H12v-8zm2 2v4h8v-4h-8zm-2-4h12v2H12v-2zm0 12h12v2H12v-2z" fill="white"/>
                     </svg>
                 </div>
-                <h1>SecureBank</h1>
+                <h1>Teduh Jiwa</h1>
                 <p>Access your account securely</p>
             </div>
             
-            <form class="register-form" id="registerForm" novalidate>
+            <form class="#" id="registerForm" novalidate>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required autocomplete="email">
                     <span class="error-message" id="emailError"></span>
                 </div>
 
+                
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div class="password-wrapper">
@@ -53,7 +60,7 @@
                 </div>
 
                 <button type="submit" class="login-btn">
-                    <span class="btn-text">Sign In</span>
+                    <span class="btn-text">Daftar</span>
                     <div class="btn-loader">
                         <div class="spinner"></div>
                     </div>
@@ -81,7 +88,7 @@
         </div>
     </div>
 
-    <script src="../../shared/js/form-utils.js"></script>
-    <script src="script.js"></script>
+   
+    <script src="js/register (2).js"></script>
 </body>
 </html>
