@@ -90,7 +90,61 @@ https://templatemo.com/tm-587-tiya-golf-club
                             </li>
                         </ul>
 
-        
+         <div class="d-none d-lg-block ms-lg-3">
+                            <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Daftar Keanggotaan</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">                
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Daftar Keanggotaan</h5>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body d-flex flex-column">
+                    <form class="custom-form member-login-form" action="#" method="post" role="form">
+
+                        <div class="member-login-form-body">
+                            <div class="mb-4">
+                                <label class="form-label mb-2" for="member-login-number">No. Keanggotaaan</label>
+
+                                <input type="text" name="member-login-number" id="member-login-number" class="form-control" placeholder="11002560" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label mb-2" for="member-login-password">Kata Sandi</label>
+
+                                <input type="password" name="member-login-password" id="member-login-password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="*****" required="">
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Ingatkan Saya
+                                </label>
+                            </div>
+
+                            <div class="col-lg-5 col-md-7 col-8 mx-auto">
+                                <button type="submit" class="form-control">Daftar</button>
+                            </div>
+
+                            <div class="text-center my-4">
+                                <a href="#">Lupa Kata Sandi?</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-auto mb-5">
+                        <p>
+                            <strong class="text-white me-3">Pertanyaan?</strong>
+
+                            <a href="tel: +62 811-9116-0712" class="contact-link">
+                            	+62 811-9116-0712
+                            </a>
                         </p>
                     </div>
                 </div>
