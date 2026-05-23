@@ -406,3 +406,25 @@ body {
     transform: translatex(-50%);
     z-index: 999;
 }
+.extra-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+}
+
+.extra-btn{
+    display:block;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    background:#6366F1;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.extra-btn:hover{
+    background:#4f46e5;
+}
