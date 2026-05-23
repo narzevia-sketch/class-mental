@@ -1287,3 +1287,11 @@ strong {
   }
 }
 
+.navbar-user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-status{
+    color:#ffffff
