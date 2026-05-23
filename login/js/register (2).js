@@ -1,5 +1,6 @@
 document.getElementById("registerForm").addEventListener("submit", async function(e) {
-
+ e.preventDefault();
+    
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -15,9 +16,10 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const data = await res.json();
 
     if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
-    }
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    alert("Register berhasil!");
+
+    window.location.href = "../index.html";
 });
