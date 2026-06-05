@@ -5,29 +5,44 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
+    // Mengaktifkan loading atau teks pada tombol jika diperlukan
+    console.log("Mencoba mendaftarkan user:", username);
+
     try {
-        // Mengirim data register ke API yang sama dengan login
         const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            // Perhatikan bagian action=register
             body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
         });
 
-        const data = await res.json();
+        // Membaca respon mentah dari server sebagai teks terlebih dahulu untuk menghindari crash JSON
+        const responseText = await res.text();
+        console.log("Respon mentah dari server:", responseText);
 
-        if (data.status === "success") {
-            alert("Registrasi Berhasil! Silahkan Login.");
-            // Pindahkan ke halaman login (index.html tempat form login berada)
+        // Mengubah teks ke objek JSON secara aman
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (jsonError) {
+            console.error("Gagal membaca JSON. Respon server bukan JSON yang valid:", jsonError);
+            alert("Terjadi kesalahan pada respon server. Silahkan cek console.");
+            return;
+        }
+
+        // Cek status dari API
+        if (data.status === "success" || data.status === true) {
+            alert("Registrasi Berhasil! Mengalihkan ke halaman login...");
+            // Jika file register dan login kamu ada di folder yang sama:
             window.location.href = "index.html"; 
         } else {
-            // Jika username/email sudah terdaftar atau ada error lain dari API
-            alert("Registrasi Gagal: " + (data.message || "Terjadi kesalahan"));
+            // Menampilkan pesan error dari API jika ada
+            alert("Registrasi Gagal: " + (data.message || "Username/Email mungkin sudah terdaftar."));
         }
+
     } catch (error) {
-        console.error("Error:", error);
-        alert("Gagal terhubung ke server registrasi.");
+        console.error("Terjadi error saat fetch:", error);
+        alert("Gagal terhubung ke server. Pastikan koneksi internet aktif.");
     }
 });
